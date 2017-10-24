@@ -31,6 +31,14 @@ int getRows(ifstream &inFile){
   return stoi(temp);
 }
 
+void out(int input){
+  ofstream outFile("output.txt", ios::out);
+  outFile << input;
+  if(!outFile)
+    cout << "There was an error writing to the output file!!!" << endl;
+  outFile.close();
+}
+
 int main(){
   ifstream inFile("input.txt", ios::in);
   if(!inFile) {
@@ -61,6 +69,9 @@ int main(){
   int max;
   max = Max(array, solution);
   cout << max << endl;
+  
+  out(max);
+
   inFile.close();
   return 0;
 }
