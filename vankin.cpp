@@ -11,6 +11,14 @@ int getRows(ifstream &inFile){
   return stoi(temp);
 }
 
+void out(int input){
+  ofstream outFile("output.txt", ios::out);
+  outFile << input;
+  if(!outFile)
+    cout << "There was an error writing to the output file!!!" << endl;
+  outFile.close();
+}
+
 int main(){
   ifstream inFile("input.txt", ios::in);
   if(!inFile)
@@ -33,6 +41,8 @@ int main(){
   }
 
   cout << "vector pos 1,1: " << array[1][1] << endl;
+  
+  out(14);
 
   inFile.close();
   return 0;
