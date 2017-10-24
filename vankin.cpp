@@ -68,7 +68,6 @@ int main(){
   
   int max;
   max = Max(array, solution);
-  cout << max << endl;
   
   out(max);
 
